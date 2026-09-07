@@ -1,0 +1,1 @@
+select * from stg_state_testing LIMIT 10;
