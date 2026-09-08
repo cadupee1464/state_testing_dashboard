@@ -13,12 +13,12 @@ models:
       - name: STUDENTIDENTIFIER
         description: "The unique identifier of student."
         tests:
-          - not null
+          - not_null
 
       - name: SUBMITDATETIME
         description: "Time test submitted by student. Designates test finished by student."
         tests:
-          - not null
+          - not_null
 
       - name: SCHOOLYEAR
         description: "Academic year of testing event."
@@ -52,8 +52,7 @@ models:
         description: "1-4 scale of achievment on tested assessment, 4 being the highest level."
         tests:
           - accepted_values:
-                arguments:
-                  values: [NA, 1, 2, 3, 4]
+              values: [NA, 1, 2, 3, 4]
 
       - name: SCALESCORE
         description: "Numerical score assigned to student's work on test."

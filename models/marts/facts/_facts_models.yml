@@ -16,7 +16,7 @@ models:
       - name: STUDENTIDENTIFIER
         description: "The unique identifier of student."
         tests:
-          - not null
+          - not_null
           - relationships:
               to: ref('dim_students')
               field: STUDENTIDENTIFIER
@@ -49,8 +49,7 @@ models:
         tests:
           - not_null
           - accepted_values:
-                arguments:
-                  values: [NA, 1, 2, 3, 4]
+              values: [NA, 1, 2, 3, 4]
 
       - name: SCALESCORE
         description: "Numerical score assigned to student's work on test."
