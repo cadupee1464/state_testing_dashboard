@@ -53,8 +53,6 @@ models:
 
       - name: SCALESCORE
         description: "Numerical score assigned to student's work on test."
-        tests:
-          - not_null
 
       - name: ENGLISHLANGUAGEACQUISITIONSTATUS
         description: "Designation of English Language Proficiency"

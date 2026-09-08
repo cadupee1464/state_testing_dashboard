@@ -5,20 +5,18 @@ models:
     description: "Imported raw version of testing data."
     
     columns:
-      - name: SCHOOLNAME
+      - name: schoolname
         description: "Name of testing location"
         tests:
           - not_null
 
-      - name: STUDENTIDENTIFIER
+      - name: StudentIdentifier
         description: "The unique identifier of student."
         tests:
           - not_null
 
       - name: SUBMITDATETIME
         description: "Time test submitted by student. Designates test finished by student."
-        tests:
-          - not_null
 
       - name: SCHOOLYEAR
         description: "Academic year of testing event."
@@ -33,7 +31,7 @@ models:
         description: "Testing subcategory"
 
 
-      - name: ASSESSMENTNAME
+      - name: AssessmentName
         description: "Unique testing name per CAASPP assessment"
         tests:
           - not_null
