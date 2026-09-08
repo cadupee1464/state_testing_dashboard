@@ -16,4 +16,8 @@ snapshot-paths:
   - snapshots
 models:
   state_testing_dashboard:
-    +materialized: view
+    staging:
+      +materialized: view
+
+    marts:
+      +materialized: table
