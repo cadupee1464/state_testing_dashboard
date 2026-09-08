@@ -46,7 +46,7 @@ The dbt DAG below shows the transformation path from the anonymized
 source data through staging and into the dimensional models consumed
 by Power BI.
 
-![dbt DAG](images/dbt_dag.png)
+![dbt DAG](images/dashboard_lineage_dag.png)
 
 The staging layer standardizes source data before it is modeled into
 student, school, and assessment dimensions and the testing-event fact table.
