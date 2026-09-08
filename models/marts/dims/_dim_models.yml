@@ -48,18 +48,6 @@ models:
           - unique
           - not_null
 
-      - name: ISMIGRANT
-        description: "Boolean designation of student's status as migrant."
-        
-      - name: LANGUAGECODE
-        description: "Language acquisition code"
-
-      - name: LANGUAGEALTCODE
-        description: "Alternative language acquisition code"
-
-      - name: ENGLISHLANGUAGEACQUISITIONSTATUS
-        description: "Designation of English Language Proficiency"
-
       - name: ISHISPANICORLATINO
         description: "Boolean designation of student's status as Hispanic or Latino."
 

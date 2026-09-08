@@ -6,7 +6,13 @@ stg.SUBMITDATETIME,
 stg.SCHOOLYEAR,
 stg.GRADELEVELWHENASSESSED,
 stg.SCALESCOREACHIEVEMENTLEVEL,
-stg.SCALESCORE
+stg.SCALESCORE,
+stg.EnglishLanguageAcquisitionStatus,
+stg.LanguageCode,
+stg.LanguageAltCode,
+CASE WHEN TRIM(UPPER(stg.MigrantStatus)) = 'YES' THEN TRUE
+    WHEN TRIM(UPPER(stg.MigrantStatus)) = 'NO' THEN FALSE
+    END AS IsMigrant
 FROM {{ ref('stg_state_testing')  }} as stg
 LEFT JOIN {{  ref('dim_schools')  }} as sc
 ON stg.SchoolName = sc.School_Name

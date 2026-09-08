@@ -1,12 +1,6 @@
 with ethnicity_features as (
 SELECT 
     DISTINCT StudentIdentifier,
-    CASE WHEN TRIM(UPPER(MigrantStatus)) = 'YES' THEN TRUE
-    WHEN TRIM(UPPER(MigrantStatus)) = 'NO' THEN FALSE
-    END AS IsMigrant,
-    LanguageCode,
-    LanguageAltCode,
-    EnglishLanguageAcquisitionStatus,
     CASE WHEN TRIM(UPPER(HispanicOrLatinoEthnicity)) = 'YES' THEN TRUE
     WHEN TRIM(UPPER(HispanicOrLatinoEthnicity)) = 'NA' THEN FALSE
     END AS IsHispanicOrLatino,
