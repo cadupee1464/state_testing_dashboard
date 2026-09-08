@@ -1,0 +1,86 @@
+version: 2
+
+models:
+  - name: dim_assessments
+    description: "Dimension of unique assessments taken by students in the data"
+    
+    columns:
+      - name: ASSESSMENTNAME
+        description: "Unique testing name per CAASPP assessment"
+        tests:
+          - unique
+          - not_null
+
+      - name: SUBJECT
+        description: "Assessed academic subject matter"
+        tests:
+          - not_null
+
+      - name: ASSESSMENTTYPE
+        description: "Testing category"
+
+      - name: ASSESSMENTSUBTYPE
+        description: "Testing subcategory"
+  
+  - name: dim_schools
+    description: "Unique school locations, wherein students are members of a particular student body and assessed at that location."
+    
+    columns:
+      - name: SCHOOL_NAME
+        description: "Name of testing location"
+        tests:
+          - not_null
+
+      - name: SCHOOL_ID
+        description: "Unique identifier of school site."
+        tests:
+          - unique
+          - not_null
+
+
+  - name: dim_students
+    description: "Unique persons taking academic assessments."
+    
+    columns:
+      - name: STUDENTIDENTIFIER
+        description: "The unique identifier of student."
+        tests:
+          - unique
+          - not_null
+
+      - name: ISMIGRANT
+        description: "Boolean designation of student's status as migrant."
+        
+      - name: LANGUAGECODE
+        description: "Language acquisition code"
+
+      - name: LANGUAGEALTCODE
+        description: "Alternative language acquisition code"
+
+      - name: ENGLISHLANGUAGEACQUISITIONSTATUS
+        description: "Designation of English Language Proficiency"
+
+      - name: ISHISPANICORLATINO
+        description: "Boolean designation of student's status as Hispanic or Latino."
+
+      - name: ISAMERICANINDIANORALASKANATIVE
+        description: "Boolean designation of student's status as American Indian or Alaska Native."
+
+      - name: ISASIAN
+        description: "Boolean designation of student's status as Asian."
+
+      - name: ISBLACKORAFRICANAMERICAN
+        description: "Boolean designation of student's status as Black or African American."
+
+      - name: ISWHITE
+        description: "Boolean designation of student's status as White."
+
+      - name: ISNATIVEHAWAIIANOROTHERPACIFICISLANDER
+        description: "Boolean designation of student's status as Native Hawaiian or Other Pacific Islander."
+
+      - name: ISTWOORMORERACES
+        description: "Boolean designation of student's status as Two or More Races."
+
+      - name: ISFILIPINO
+        description: "Boolean designation of student's status as Filipino."
+        

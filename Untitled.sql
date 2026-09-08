@@ -1,0 +1,1 @@
+select distinct SCALESCOREACHIEVEMENTLEVEL from stg_state_testing;

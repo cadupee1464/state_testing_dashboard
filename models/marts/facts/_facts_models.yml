@@ -1,0 +1,58 @@
+version: 2
+
+models:
+  - name: fact_test_events
+    description: "Event table of all recorded testing events. Designates one student taking one test at a particular time."
+    
+    columns:
+      - name: SCHOOL_ID
+        description: "Unique identifier of school site."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_schools')
+              field: SCHOOL_ID
+
+      - name: STUDENTIDENTIFIER
+        description: "The unique identifier of student."
+        tests:
+          - not null
+          - relationships:
+              to: ref('dim_students')
+              field: STUDENTIDENTIFIER
+
+      - name: ASSESSMENTNAME
+        description: "Unique testing name per CAASPP assessment"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_assessments')
+              field: ASSESSMENTNAME
+
+      - name: SUBMITDATETIME
+        description: "Time test submitted by student. Designates test finished by student."
+        tests:
+          - not_null
+
+      - name: SCHOOLYEAR
+        description: "Academic year of testing event."
+        tests:
+          - not_null
+
+      - name: GRADELEVELWHENASSESSED
+        description: "Student's academic grade level at time of testing event"
+        tests:
+          - not_null
+
+      - name: SCALESCOREACHIEVEMENTLEVEL
+        description: "1-4 scale of achievment on tested assessment, 4 being the highest level."
+        tests:
+          - not_null
+          - accepted_values:
+                arguments:
+                  values: [NA, 1, 2, 3, 4]
+
+      - name: SCALESCORE
+        description: "Numerical score assigned to student's work on test."
+        tests:
+          - not_null

@@ -1,0 +1,99 @@
+version: 2
+
+models:
+  - name: stg_state_testing
+    description: "Imported raw version of testing data."
+    
+    columns:
+      - name: SCHOOLNAME
+        description: "Name of testing location"
+        tests:
+          - not_null
+
+      - name: STUDENTIDENTIFIER
+        description: "The unique identifier of student."
+        tests:
+          - not null
+
+      - name: SUBMITDATETIME
+        description: "Time test submitted by student. Designates test finished by student."
+        tests:
+          - not null
+
+      - name: SCHOOLYEAR
+        description: "Academic year of testing event."
+
+
+      - name: ASSESSMENTTYPE
+        description: "Testing category"
+        tests:
+          - not_null
+
+      - name: ASSESSMENTSUBTYPE
+        description: "Testing subcategory"
+
+
+      - name: ASSESSMENTNAME
+        description: "Unique testing name per CAASPP assessment"
+        tests:
+          - not_null
+
+      - name: SUBJECT
+        description: "Assessed academic subject matter"
+        tests:
+          - not_null
+
+      - name: GRADELEVELWHENASSESSED
+        description: "Student's academic grade level at time of testing event"
+        tests:
+          - not_null
+
+      - name: SCALESCOREACHIEVEMENTLEVEL
+        description: "1-4 scale of achievment on tested assessment, 4 being the highest level."
+        tests:
+          - accepted_values:
+                arguments:
+                  values: [NA, 1, 2, 3, 4]
+
+      - name: SCALESCORE
+        description: "Numerical score assigned to student's work on test."
+
+
+      - name: MIGRANTSTATUS
+        description: "Text designation of student's status as migrant."
+
+      - name: LANGUAGECODE
+        description: "Language acquisition code"
+
+
+      - name: LANGUAGEALTCODE
+        description: "Alternative language acquisition code"
+
+
+      - name: ENGLISHLANGUAGEACQUISITIONSTATUS
+        description: "Designation of English Language Proficiency"
+
+
+      - name: HISPANICORLATINO
+        description: "Text designation of student's status as Hispanic or Latino."
+
+      - name: AMERICANINDIANORALASKANATIVE
+        description: "Text designation of student's status as American Indian or Alaska Native."
+
+      - name: ASIAN
+        description: "Text designation of student's status as Asian."
+
+      - name: BLACKORAFRICANAMERICAN
+        description: "Text designation of student's status as Black or African American."
+
+      - name: WHITE
+        description: "Text designation of student's status as White."
+
+      - name: NATIVEHAWAIIANOROTHERPACIFICISLANDER
+        description: "Text designation of student's status as Native Hawaiian or Other Pacific Islander."
+
+      - name: TWOORMORERACES
+        description: "Text designation of student's status as Two or More Races."
+
+      - name: FILIPINO
+        description: "Text designation of student's status as Filipino."
