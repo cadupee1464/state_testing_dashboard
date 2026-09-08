@@ -10,11 +10,13 @@ This project consumes and models State Testing data for a school district, deliv
 
 ## Dashboard
 
-![Dashboard Screenshot](path/to/dashboard_screenshot.png)
+![Dashboard Screenshot](images/dashboard_overview.png)
 
 **What does the dashboard show?**
 
 The key performance indicators demonstrated from the overview page include the percentage of the students achieving a Proficient classification on Achivement (as identified by a 3 or 4 on the Scaled Score Achievement Level), as well as how many students tested and the average scaled score. Users may filter by grade level, type of test, subject of test, and which school site hosted the testing. This enables users to focus in on specific subject areas, interim versus summative tests, and particular school sites.
+
+![Dashboard Screenshot](images/dashboard_performance_breakdown.png)
 
 ---
 
@@ -37,6 +39,17 @@ The key performance indicators demonstrated from the overview page include the p
 ```
 
 The raw data is delivered from CAASPP in flat file form and manually ingested, as permissions for download of district data are limited to administrative users of school sites, and no API access is granted. In staging, data types and column names are declared. Dimensional models then normalize entities such as assessment, student, and school site. dbt tests for uniqueness and absence of nulls occur at and between the staging and dimension tables, while relationship integrity is checked at the fact table in relationship to the dimensions.
+
+### dbt Lineage
+
+The dbt DAG below shows the transformation path from the anonymized
+source data through staging and into the dimensional models consumed
+by Power BI.
+
+![dbt DAG](images/dbt_dag.png)
+
+The staging layer standardizes source data before it is modeled into
+student, school, and assessment dimensions and the testing-event fact table.
 
 ---
 
